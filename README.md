@@ -44,4 +44,6 @@ qemu-uintr 研究清楚了访存如何做，将 senduipi 指令实现到手册�
 
 修复了一些 bug，现在可以完整跑通 `uipi_sample.c`。
 
+对输出进行了反汇编分析，详情见`ppt/asm分析.md`
+
 详见 `ppt/2022-5-14.pptx`
