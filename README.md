@@ -2,6 +2,8 @@
 
 ### 项目描述
 
+选题为 **[proj6-RV64N-user-level-interrupt](https://github.com/oscomp/proj6-RV64N-user-level-interrupt)** 。
+
 探索运用新一代 Intel 硬件特性**用户态中断**（User Interrupt） ，搭建运行环境，设计新的 IPC 场景和框架，不断与传统 IPC 及 XPC、underbridge、skybridge 等新 IPC 进行性能比较并优化。
 
 基于 qemu 的 uintr 模拟器实现源码：https://gitlab.eduxiji.net/quintr/qemu
@@ -10,8 +12,15 @@ uintr-linux-kernel：https://gitlab.eduxiji.net/quintr/uintr-linux-kernel
 
 如需复现当前 qemu 的成果，可参考 qemu 仓库根目录下的 workinglog.md 中的部分内容，配置环境，编译 uintr-linux-kernel ，编译 qemu ，编译 uipi_sample.c ，并用 qemu 执行 uintr-linux-kernel ，运行 uipi_sample.c （当前还未能完全跑通）。之后我们会考虑将这部分的文档独立化与细致化，以便外界复现和参考。
 
+如需复现当前 qemu 的成果，可参考 qemu 仓库根目录下的 workinglog.md 中的部分内容，配置环境，编译 uintr-linux-kernel ，编译 qemu ，编译 uipi_sample.c ，并用 qemu 执行 uintr-linux-kernel ，运行 uipi_sample.c （当前还未能完全跑通）。之后我们会考虑将这部分的文档独立化与细致化，以便外界复现和参考。
+
 一些自己产出的 ppt 放在本仓库文件夹 `ppt` 下。
 
+### 与导师的沟通情况
+
+每周都有定时例会与导师进行沟通。
+
+和导师建立了微信群。
 ### 工作规划
 
 #### 第一步
