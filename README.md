@@ -2,19 +2,37 @@
 
 ### 项目描述
 
-探索运用新一代 Intel 硬件特性**用户态中断**（User Interrupt） ，搭建运行环境，设计新的 IPC 场景和框架，不断进行性能比较和优化。
+探索运用新一代 Intel 硬件特性**用户态中断**（User Interrupt） ，搭建运行环境，设计新的 IPC 场景和框架，不断与传统 IPC 及 XPC、underbridge、skybridge 等新 IPC 进行性能比较并优化。
 
-基于 nimbos 实现源码：https://github.com/OS-F-4/nimbos-uintr
+基于 qemu 的 uintr 模拟器实现源码：https://gitlab.eduxiji.net/quintr/qemu
 
-基于 qemu 的 uintr 模拟器实现源码：https://github.com/OS-F-4/qemu-uintr
+uintr-linux-kernel：https://gitlab.eduxiji.net/quintr/uintr-linux-kernel
 
-ipc 性能标定代码：https://github.com/OS-F-4/ipc-bench
-
-与本项目相关的其他内容：https://github.com/OS-F-4/uintr-misc
+如需复现当前 qemu 的成果，可参考 qemu 仓库根目录下的 workinglog.md 中的部分内容，配置环境，编译 uintr-linux-kernel ，编译 qemu ，编译 uipi_sample.c ，并用 qemu 执行 uintr-linux-kernel ，运行 uipi_sample.c （当前还未能完全跑通）。之后我们会考虑将这部分的文档独立化与细致化，以便外界复现和参考。
 
 一些自己产出的 ppt 放在本仓库文件夹 `ppt` 下。
 
+### 工作规划
+
+#### 第一步
+
+受限于疫情影响，我们没办法拿到有 uintr 特性的物理机。为了方便后续工作开展，第一步我们将基于 qemu 实现支持 uintr 的模拟器。
+
+预期产出：能在我们的 qemu 上跑 uintr-linux-kernel ，并正确通过 linux 实现的简单功能测例 uipi_sample.c 。
+
 ### 项目进度
+
+#### 2022-4-9
+
+完成了一些前期调研工作。
+
+阅读了 XPC 、 underbridge 、skybridge 论文。
+
+阅读与整理了 Intel Architecture Instruction Set Extensions  and Future Features 中与用户态中断相关的硬件规范，主要是第2章与第11章。详见 `ppt/uintr-intel-linux.pptx` 。
+
+阅读与整理了 uintr-linux-kernel （基于 linux 运用 uintr 特性的内核版本）仓库中的 commits 。详见 `ppt/uintr-intel-kernel commit summary.pptx` 。
+
+对之后希望实现的 IPC 场景与框架进行了简单的调研与设计，受限于当前工作重心，该部分暂没有成熟的想法。
 
 #### 2022-4-16
 
