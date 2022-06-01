@@ -85,9 +85,13 @@ qemu-uintr 研究清楚了访存如何做，将 senduipi 指令实现到手册�
 
 #### 2022-5-28
 
-解决了cpu调度的问题, 最后总结问题为中断处理问题。
+解决了cpu调度的问题, 最后总结问题为中断处理问题。 
 
-详见`ppt/2022-5-21.pptx` , `调度问题5-28.md`
+构建了一个 ubuntu 文件系统，尝试在其中运行 Intel 的 uintr ipc benchmark。
+
+详见`ppt/2022-5-28.pptx` , `调度问题5-28.md`, `how-to-build-a-ubuntu-rootfs.md`
+
+
 
 #### 2022-6-4
 
