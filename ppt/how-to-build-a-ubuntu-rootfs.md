@@ -30,6 +30,7 @@ apt-get clean
 wget https://mirrors.tuna.tsinghua.edu.cn/gnu/binutils/binutils-2.38.tar.bz2
 tar -jxf binutils-2.38.tar.bz2
 cd binutils-2.38 && ./configure && make -j && make install && cd ..
+rm -rf binutils-2.38 binutils-2.38.tar.bz2
 git clone -b linux-rfc-v1 https://github.com/OS-F-4/ipc-bench.git
 cd ipc-bench
 mkdir build
@@ -47,7 +48,7 @@ make
 mount -t proc none /proc
 mount -t sysfs none /sys
 echo -e "\nBoot took $(cut -d' ' -f1 /proc/uptime) seconds\n"
-exec /bin/sh
+exec /bin/bash
 ```
 
 ## 构建文件系统压缩包
