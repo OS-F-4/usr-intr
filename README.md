@@ -97,5 +97,8 @@ qemu-uintr 研究清楚了访存如何做，将 senduipi 指令实现到手册�
 
 实现了直接发中断的逻辑，修复了部分特权级判断的bug，详见`ppt/直接发中断6-4.md`。
 
+跑通 intel ipc-bench，取得了初步的性能测试结果，并对性能瓶颈进行了分析。
+
 编写了`qemu-tutorial.md`主要面向手把手修改qemu代码并进行调试, 详见`qemu-tutorial.md`
 
+详见`ppt/2022-6-4.pptx`
