@@ -102,3 +102,15 @@ qemu-uintr 研究清楚了访存如何做，将 senduipi 指令实现到手册�
 编写了`qemu-tutorial.md`主要面向手把手修改qemu代码并进行调试, 详见`qemu-tutorial.md`
 
 详见`ppt/2022-6-4.pptx`
+
+
+
+#### 2022-6-11
+
+修补bug, 多线程情况下跑通`uintrfd-uni`
+
+新增5个测试程序, 均测试通过
+
+修补bug, 使得`uintrfd-bi` 能够高概率直接发送中断, 性能大幅度提升。
+
+测试了基于共享内存的`uintrfd-bi`, 新能依旧碾压传统方法。
