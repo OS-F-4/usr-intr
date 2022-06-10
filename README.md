@@ -10,10 +10,6 @@
 
 uintr-linux-kernel：https://gitlab.eduxiji.net/quintr/uintr-linux-kernel
 
-如需复现当前 qemu 的成果，可参考 qemu 仓库根目录下的 workinglog.md 中的部分内容，配置环境，编译 uintr-linux-kernel ，编译 qemu ，编译 uipi_sample.c ，并用 qemu 执行 uintr-linux-kernel ，运行 uipi_sample.c （当前还未能完全跑通）。之后我们会考虑将这部分的文档独立化与细致化，以便外界复现和参考。
-
-如需复现当前 qemu 的成果，可参考 qemu 仓库根目录下的 workinglog.md 中的部分内容，配置环境，编译 uintr-linux-kernel ，编译 qemu ，编译 uipi_sample.c ，并用 qemu 执行 uintr-linux-kernel ，运行 uipi_sample.c （当前还未能完全跑通）。之后我们会考虑将这部分的文档独立化与细致化，以便外界复现和参考。
-
 一些自己产出的 ppt 放在本仓库文件夹 `ppt` 下。
 
 ### 与导师的沟通情况
@@ -29,6 +25,24 @@ uintr-linux-kernel：https://gitlab.eduxiji.net/quintr/uintr-linux-kernel
 
 预期产出：能在我们的 qemu 上跑 uintr-linux-kernel ，并正确通过 linux 实现的简单功能测例 uipi_sample.c 。
 
+#### 第二步
+
+进行性能测试，基于 Linux RFC 报告使用的 ipc-bench 作测试，比较 uintr 与 pipe等传统 IPC 方式的性能异同。自行编写 uintr+shmem 或其他运用 uintr 形式的用户测例，与传统 IPC 方式作比较。
+
+预期产出：复现并得到比 Linux RFC 更丰富的性能测试结果，验证 IPC 框架设计的可行性。
+
+#### 第三步
+
+修改 Linux 内核，为 IPC 框架提供更通用的系统调用接口，并通过测试。
+
+预期产出：一个初步成型的原型系统。
+
+#### 第四步
+
+寻找能发挥我们系统优势的有意义应用场景，在调度、负载均衡等方面继续改进 IPC 框架和内核。
+
+预期产出：一篇有价值或影响力的学术性论文
+
 ### 项目进度
 
 #### 2022-4-9
@@ -41,7 +55,11 @@ uintr-linux-kernel：https://gitlab.eduxiji.net/quintr/uintr-linux-kernel
 
 阅读与整理了 uintr-linux-kernel （基于 linux 运用 uintr 特性的内核版本）仓库中的 commits 。详见 `ppt/uintr-intel-kernel commit summary.pptx` 。
 
-对之后希望实现的 IPC 场景与框架进行了简单的调研与设计，受限于当前工作重心，该部分暂没有成熟的想法。
+对之后希望实现的 IPC 场景与框架进行了简单的调研与设计，受限于当前工作重心，该部分暂没有成熟的想法。阶段性想法产出如下（感谢张译仁学长）：
+
+对 XPC 和 uintr 进行了比较分析，提出 uintr+shmem 实现的 IPC 框架，详见 `ppt/初步设想.pdf` 。
+
+对 uintr 的实际应用场景和会遇到的问题进行了简单分析，详见 `ppt/应用场景.md` 。
 
 #### 2022-4-16
 
