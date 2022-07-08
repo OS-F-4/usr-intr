@@ -135,3 +135,13 @@ qemu-uintr 研究清楚了访存如何做，将 senduipi 指令实现到手册�
 
 将 linux 内核的终端正确挂载到 `/dev/ttyS0` 上，从而能够跑起其它传统形式的 ipc 测例程序。相关参考资料 [1](https://unix.stackexchange.com/questions/529935
 )、[2](https://stackoverflow.com/questions/36529881)
+
+#### 2022-7-9
+
+与蚂蚁沟通协调，可以使用蚂蚁的物理机了。
+
+与贾越凯学长交流，了解网络请求性能优化的大致思路。
+
+初步调研 Nginx 对网络请求的处理流程。
+
+见 `ppt/利用uintr优化网络服务性能.pptx`
