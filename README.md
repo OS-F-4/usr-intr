@@ -12,6 +12,27 @@ uintr-linux-kernel：https://gitlab.eduxiji.net/quintr/uintr-linux-kernel
 
 一些自己产出的 ppt 放在本仓库文件夹 `ppt` 下。
 
+### ==项目背景(大概写一下ipc的性能需求, 前期调研的内容)==
+
+
+
+# 成果请看这里
+
+| 成果                           | github地址                                              | 详细说明以及使用                        | gitlab地址                                                   | 详细说明以及使用                                |
+| ------------------------------ | ------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------- |
+| 实现用户态中断的qemu           | https://github.com/OS-F-4/qemu-uintr                    |                                         | https://gitlab.eduxiji.net/quintr/qemu                       |                                                 |
+| 实现用户态中断的linux内核      | https://github.com/OS-F-4/uintr-linux-kernel            |                                         | https://gitlab.eduxiji.net/quintr/uintr-linux-kernel/-/tree/uintr-next |                                                 |
+| ipc-bench性能测试              | https://github.com/OS-F-4/ipc-bench/tree/linux-rfc-v1   |                                         | https://gitlab.eduxiji.net/quintr/ipc-bench                  |                                                 |
+| 基于io_uring的异步系统调用内核 | https://github.com/OS-F-4/uintr-linux-kernel/tree/uring |                                         | https://gitlab.eduxiji.net/quintr/uintr-linux-kernel/-/tree/uring |                                                 |
+| 异步系统调用用户程序           | https://github.com/OS-F-4/uring                         |                                         | https://gitlab.eduxiji.net/quintr/uring                      |                                                 |
+| qemu tutorial                  | https://github.com/OS-F-4/qemu-tutorial                 | https://github.com/OS-F-4/qemu-tutorial | https://gitlab.eduxiji.net/quintr/qemu-tutorial              | https://gitlab.eduxiji.net/quintr/qemu-tutorial |
+
+
+
+
+
+
+
 ### 与导师的沟通情况
 
 每周都有定时例会与导师进行沟通。
