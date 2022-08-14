@@ -4,13 +4,11 @@
 
 选题为 **[proj6-RV64N-user-level-interrupt](https://github.com/oscomp/proj6-RV64N-user-level-interrupt)** 。
 
-探索运用新一代 Intel 硬件特性**用户态中断**（User Interrupt） ，搭建运行环境，设计新的 IPC 场景和框架，不断与传统 IPC 及 XPC、underbridge、skybridge 等新 IPC 进行性能比较并优化。
+探索运用新一代 Intel 硬件特性**用户态中断**( User Interrupt )，搭建运行环境，设计新的 IPC 场景和框架，不断与传统 IPC 及 XPC、underbridge、skybridge 等新 IPC 进行性能比较并优化, 我们的结果表明, 利用用户态中断来进行进程间通信, 因其不需要进过内核, 从而性能相比传统进程间通信有数量级上的优势。此外我们还通过将用户态中断和linux io_uring子系统结合, 以用户态中断作为io完成的通知机制, 实现了双向的异步调用过程, 在保证异步基本的特性的情况下获取了更低的io延迟。
 
-基于 qemu 的 uintr 模拟器实现源码：https://gitlab.eduxiji.net/quintr/qemu
+为了更好更方便地调试代码, 我们基于qemu实现了x86的用户态中断的支持, 可以让更多没有支持用户态中断硬件设备的人可以尝试用户态中断的特性。同时在修改qemu代码的过程中, 我们还总结qemu代码的框架和部分实现的细节, 制作为[qemu tutorial](https://github.com/OS-F-4/qemu-tutorial), 实现了代码级别的qemu教程, 帮助更多的人了解qemu的原理和实现。
 
-uintr-linux-kernel：https://gitlab.eduxiji.net/quintr/uintr-linux-kernel
-
-一些自己产出的 ppt 放在本仓库文件夹 `ppt` 下。
+一些产出的 ppt 放在本仓库文件夹 `ppt` 下, 主要内容为每周进度汇报, debug日志, 程序输出log, 问题探索和解决过程等。
 
 ### ==项目背景(大概写一下ipc的性能需求, 前期调研的内容)==
 

@@ -2,11 +2,9 @@
 
 
 
-
-
 ## 如何安装gcc-11
 
-ubuntu: 
+### ubuntu: 
 
 ```shell
 # 安装gcc-11
@@ -15,9 +13,17 @@ sudo apt install build-essential manpages-dev software-properties-common
 sudo apt update && sudo apt install gcc-11 
 ```
 
+切换默认的gcc到gcc-11
+
+```shell
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100
+```
+
+其中最后的数字100表示优先级, 只要比其他gcc高, 该gcc就会成为默认的gcc。
 
 
-centos:
+
+### centos:
 
 ```shell
 yum install gcc-toolset-11
