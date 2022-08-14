@@ -157,7 +157,7 @@ $QEMU -smp 2  \
 
 
 
-### 
+
 
 ### 编译内核(用于物理机)
 
@@ -194,7 +194,7 @@ find . -name *.ko -exec strip --strip-unneeded {} +
 
 ### 编译用户态中断程序
 
-编译需要用到`gcc-11`, 具体的安装方式见[其他编译帮助](https://github.com/OS-F-4/usr-intr/tree/main/ppt/%E5%B1%95%E7%A4%BA%E6%96%87%E6%A1%A3)。
+编译需要用到`gcc-11`, 具体的安装方式见[其他编译帮助](https://github.com/OS-F-4/usr-intr/blob/main/ppt/%E5%B1%95%E7%A4%BA%E6%96%87%E6%A1%A3/utils.md)。
 
 样例程序位于`uintr-linux-kernel/tools/uintr/sample`, 有对应的Makefile, 若需要自己编写用户程序, 只需要添加`-muintr`, `-mgeneral-regs-only`, ` -minline-all-stringops`三个编译选项即可。
 
