@@ -41,3 +41,33 @@ make O=build  modules -j 4
 
 构建完成后, 内核的镜像文件会在`uintr-linux-kernel/build/arch/x86_64/boot/bzImage`, 在后续过程中可以直接调用。
 
+
+
+### 文件系统的构建
+
+参考[uintr-linux](https://github.com/OS-F-4/usr-intr/blob/main/ppt/%E5%B1%95%E7%A4%BA%E6%96%87%E6%A1%A3/linux-kernel.md)中有关构建文件系统的章节。
+
+
+
+### 启动linux的shell脚本如下:
+
+```shell
+#!/bin/bash
+# 指定文件系统的路径
+ubuntu=~/qemu_uintr/ubuntu-x86_64.cpio.gz
+box=~/qemu_uintr/initramfs/initramfs-busybox-x86_64.cpio.gz
+PORT=2333
+# 指定qemu可执行文件路径
+QEMU=~/qemu_uintr/qemu/build/x86_64-softmmu/qemu-system-x86_64
+# 指定内核路径
+KERNEL=~/qemu_uintr/uintr-linux-kernel/build/arch/x86_64/boot/bzImage
+$QEMU -smp 2  \
+-machine q35,kernel_irqchip=split \
+-m 2048M   -nographic -cpu qemu64  \
+-kernel $KERNEL \
+-initrd $ubuntu \
+-append "root=/dev/ram0 rw rootfstype=ext4 console=ttyS0 init=/linuxrc" \
+-net user,id=net,hostfwd=tcp::$(PORT)-:22 -net nic,model=e1000e \
+-serial mon:stdio
+```
+
